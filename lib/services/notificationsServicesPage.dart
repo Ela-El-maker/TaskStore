@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
-import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
@@ -10,9 +9,8 @@ class NotifyHelper {
       FlutterLocalNotificationsPlugin(); //
 
   initializeNotification() async {
-    tz.initializeTimeZones();
-final String timeZoneName = await FlutterNativeTimezone.getLocalTimezone();
-tz.setLocalLocation(tz.getLocation(timeZoneName));
+// //     tz.initializeTimeZones();
+// tz.setLocalLocation(tz.getLocation(timeZoneName));
     //tz.initializeTimeZones();
     // this is for latest iOS settings
     final DarwinInitializationSettings initializationSettingsIOS =

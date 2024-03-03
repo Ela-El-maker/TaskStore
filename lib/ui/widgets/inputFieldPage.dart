@@ -28,7 +28,6 @@ class MyInputField extends StatelessWidget {
           height: 52,
           margin: EdgeInsets.only(top: 8.0),
           padding: EdgeInsets.only(left: 14),
-          color: Colors.grey,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.grey,
@@ -52,7 +51,7 @@ class MyInputField extends StatelessWidget {
                         color: context.theme.backgroundColor,
                         width: 0,
                       ),
-                    )
+                    ),
                   ),
                 ),
               ),
