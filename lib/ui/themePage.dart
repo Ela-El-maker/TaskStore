@@ -39,3 +39,31 @@ TextStyle get subHeadingStyle {
     )
   );
 }
+TextStyle get headingStyle {
+  return GoogleFonts.lato(
+    textStyle: TextStyle(
+      color: Get.isDarkMode?Colors.grey[400]:Colors.grey,
+      fontWeight: FontWeight.bold,
+      fontSize: 30,
+    )
+  );
+}
+
+TextStyle get titleStyle {
+  return GoogleFonts.lato(
+    textStyle: TextStyle(
+      color: Get.isDarkMode?Colors.white:Colors.black,
+      fontWeight: FontWeight.w400,
+      fontSize: 16,
+    )
+  );
+}
+TextStyle get subTitleStyle {
+  return GoogleFonts.lato(
+    textStyle: TextStyle(
+      color: Get.isDarkMode?Colors.grey[100]:Colors.grey[400],
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+    )
+  );
+}

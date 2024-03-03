@@ -1,8 +1,11 @@
+import 'package:date_picker_timetable/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:taskstore/services/notificationsServicesPage.dart';
 import 'package:taskstore/services/themeServicesPage.dart';
+import 'package:taskstore/ui/addTaskBarPage.dart';
 import 'package:taskstore/ui/themePage.dart';
 import 'package:taskstore/ui/widgets/buttonPage.dart';
 
@@ -14,6 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  DateTime _selectedDate  = DateTime.now();
   var notifyHelper;
   @override
   void initState() {
@@ -29,16 +33,57 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           _addTaskBar(),
-          Container(
-            child: DatePicker(
-              
-            ),
-          )
+          _addDateBar(),
+          
         ],
       ),
     );
   }
-
+  _addDateBar(){
+    return Expanded(
+      child: Column(
+        children: [
+          DatePicker(
+              DateTime.now(),
+              height:100,
+              width:80,
+              initialSelectedDate: DateTime.now(),
+              selectionColor: Theme.of(context).canvasColor,
+              selectedTextColor: Colors.white,
+              dateTextStyle: GoogleFonts.lato(
+                textStyle: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey
+              ),
+              ),
+              dayTextStyle: GoogleFonts.lato(
+                textStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey
+              ),
+              ),
+              monthTextStyle: GoogleFonts.lato(
+                textStyle: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey
+              ),
+              ),
+              onDateChange: (date){
+                _selectedDate = date;
+              },
+            ),
+          Container(
+            margin: const EdgeInsets.only(top: 20,left: 20),
+            child: Text('Selected Date: $_selectedDate',
+          style: TextStyle(fontSize: 20),)
+          ),
+        ],
+      ),
+    );
+  }
   _addTaskBar() {
     return Container(
       margin: EdgeInsets.only(left: 20, top: 10, right: 20),
@@ -61,11 +106,12 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          MyButton(label: "+ Add Task", onTap: () => null)
+          MyButton(label: "+ Add Task", onTap: () => Get.to(AddTaskPage()))
         ],
       ),
     );
   }
+  
 
   _appBar() {
     return AppBar(
@@ -94,3 +140,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+// class DatePicker {
+
+// }
