@@ -65,6 +65,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
+  date_picker_timetable:
+    dependency: "direct main"
+    description:
+      name: date_picker_timetable
+      sha256: f8d9caebe86a254f07370a773ac326eaeab3d42ac444b5893a6fe1c439997451
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   dbus:
     dependency: transitive
     description:
