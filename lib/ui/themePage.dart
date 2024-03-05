@@ -17,6 +17,24 @@ const Color darkGreyColor = Color(0xFF313239);
 
 const Color lightGreyColor = Color(0xFF999999);
 
+const Color blackColor = Color(0xFF000000);
+
+const Color redColor = Color(0xFFFF0000);
+
+const Color orangeColor = Color(0xFFFF9900);
+
+const Color turquoiseGlassColor = Color(0xFF61B4B4); // Combination of blue and green
+const Color goldenGlassColor = Color(0xFFFFC300); // Combination of yellow and orange
+const Color roseGlassColor = Color(0xFFE83E8C); // Combination of pink and red
+const Color azureGlassColor = Color(0xFF5ED1FF); // Combination of blue and teal
+const Color amethystGlassColor = Color(0xFF9B30FF); // Combination of purple and indigo
+const Color tealColor = Color(0xFF00BCD4);
+const Color purpleColor = Color(0xFF9C27B0);
+const Color limeColor = Color(0xFFCDDC39);
+const Color amberColor = Color(0xFFFFC107);
+const Color indigoColor = Color(0xFF3F51B5);
+
+
 class Themes {
   static final light = ThemeData(
     primaryColor: Colors.blue,
