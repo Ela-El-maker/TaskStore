@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:intl/intl.dart';
 import 'package:taskstore/ui/themePage.dart';
 import 'package:taskstore/ui/widgets/inputFieldPage.dart';
 
@@ -12,13 +13,14 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
+  DateTime _selectedDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.theme.backgroundColor,
       appBar: _appBar(context),
       body: Container(
-        padding: EdgeInsets.only(left: 20,right: 20),
+        padding: EdgeInsets.only(left: 20, right: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -27,7 +29,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 style: headingStyle,
               ),
               MyInputField(title: "Title", hint: "Enter your title"),
-              MyInputField(title: "Note", hint: "Enter your note")
+              MyInputField(title: "Note", hint: "Enter your note"),
+              MyInputField(title: "Date", hint: DateFormat.yMd().format(_selectedDate)),
             ],
           ),
         ),

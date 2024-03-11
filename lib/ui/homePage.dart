@@ -1,11 +1,12 @@
-import 'package:date_picker_timetable/date_picker_widget.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
+// import 'package:date_time_picker_widget/date_time_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:taskstore/services/notificationsServicesPage.dart';
 import 'package:taskstore/services/themeServicesPage.dart';
-import 'package:taskstore/ui/addTaskBarPage.dart';
+import 'package:taskstore/ui/addTaskPage.dart';
 import 'package:taskstore/ui/themePage.dart';
 import 'package:taskstore/ui/widgets/buttonPage.dart';
 
@@ -141,6 +142,3 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// class DatePicker {
-
-// }
