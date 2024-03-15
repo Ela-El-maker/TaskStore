@@ -75,7 +75,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 hint: DateFormat.yMd().format(_selectedDate),
                 widget: IconButton(
                   onPressed: () {
-                    print("Hello Kenya!!!");
+                    // print("Hello Kenya!!!");
                     _getDateFromUser();
                   },
                   icon: Icon(
@@ -118,36 +118,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                 ],
               ),
-              // MyInputField(
-              //   title: "Remind",
-              //   hint: "$_selectedRemind minutes early!!!",
-              //   widget: DropdownButton(
-              //     icon: Icon(
-              //       Icons.keyboard_arrow_down,
-              //       color: Colors.grey,
-              //     ),
-              //     iconSize: 32,
-              //     elevation: 4,
-              //     style: subTitleStyle,
-              //     underline: Container(
-              //       height: 0,
-              //       color: Colors.grey,
-              //     ),
-              //     onChanged: (Object? value) {
-              //       setState(() {
-              //         _selectedRemind = int.parse(value.toString());
-              //       });
-              //     },
-              //     items: remindList.map<DropdownMenuItem<String>>((int value) {
-              //       return DropdownMenuItem<String>(
-              //         value: value.toString(),
-              //         child: Text(value.toString()),
-              //       );
-              //     }).toList(),
-
-              //     // value: _selectedRemind,
-              //   ),
-              // ),
+              
 
               MyInputField(
                 title: "Remind",
@@ -179,41 +150,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 ),
               ),
 
-              // MyInputField(
-              //   title: "Repeat",
-              //   hint: "$_selectedRepeat",
-              //   widget: DropdownButton(
-              //     icon: Icon(
-              //       Icons.keyboard_arrow_down,
-              //       color: Colors.grey,
-              //     ),
-              //     iconSize: 32,
-              //     elevation: 4,
-              //     style: subTitleStyle,
-              //     underline: Container(
-              //       height: 0,
-              //       color: Colors.grey,
-              //     ),
-              //     onChanged: (Object? newValue) {
-              //       setState(() {
-              //         _selectedRemind = int.parse(newValue.toString());
-              //       });
-              //     },
-              //     items: repeatList.map<DropdownMenuItem<String>>((String? value) {
-              //       return DropdownMenuItem<String>(
-              //         value: value,
-              //         child: Text(
-              //           value!,
-              //           style: TextStyle(
-              //             color: Colors.grey,
-              //           ),
-              //         ),
-              //       );
-              //     }).toList(),
-
-              //     // value: _selectedRemind,
-              //   ),
-              // ),
+              
               MyInputField(
                 title: "Repeat",
                 hint: "$_selectedRepeat",
@@ -255,7 +192,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 children: [
                   _colorPallete(),
                   SizedBox(width: 80,),
-                  MyButton(label: "Create Task", onTap: () => _validateDate()),
+                  MyButton(label: "Create", onTap: () => _validateDate()),
                 ],
               )
             ],

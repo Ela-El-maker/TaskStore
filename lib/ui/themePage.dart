@@ -23,6 +23,9 @@ const Color redColor = Color(0xFFFF0000);
 
 const Color orangeColor = Color(0xFFFF9900);
 
+const Color blueOreo = Color(0xFFBBDEFB); // 0xFFBBDEFB is the hexadecimal value for Colors.blue[100]
+
+
 const Color turquoiseGlassColor = Color(0xFF61B4B4); // Combination of blue and green
 const Color goldenGlassColor = Color(0xFFFFC300); // Combination of yellow and orange
 const Color roseGlassColor = Color(0xFFE83E8C); // Combination of pink and red
@@ -37,7 +40,7 @@ const Color indigoColor = Color(0xFF3F51B5);
 
 class Themes {
   static final light = ThemeData(
-    primaryColor: Colors.blue,
+    primaryColor: blueOreo,
     brightness: Brightness.light,
   );
 
@@ -51,16 +54,27 @@ class Themes {
 TextStyle get subHeadingStyle {
   return GoogleFonts.lato(
     textStyle: TextStyle(
-      color: Get.isDarkMode?Colors.grey[400]:const Color.fromARGB(255, 0, 0, 0),
+      color: Get.isDarkMode?Colors.grey[400]:Color.fromARGB(255, 160, 158, 158),
       fontWeight: FontWeight.bold,
       fontSize: 30,
     )
   );
 }
+
+TextStyle get subTitleStyle1 {
+  return GoogleFonts.lato(
+    textStyle: TextStyle(
+      color: Get.isDarkMode?const Color.fromARGB(255, 255, 255, 255):Color.fromARGB(255, 0, 0, 0),
+      fontWeight: FontWeight.bold,
+      fontSize: 30,
+    )
+  );
+}
+
 TextStyle get headingStyle {
   return GoogleFonts.lato(
     textStyle: TextStyle(
-      color: Get.isDarkMode?Colors.grey[400]:Color.fromARGB(255, 0, 0, 0),
+      color: Get.isDarkMode?Colors.grey[400]:Color.fromARGB(255, 91, 89, 89),
       fontWeight: FontWeight.bold,
       fontSize: 30,
     )
@@ -79,7 +93,7 @@ TextStyle get titleStyle {
 TextStyle get subTitleStyle {
   return GoogleFonts.lato(
     textStyle: TextStyle(
-      color: Get.isDarkMode?Color.fromARGB(0, 255, 255, 255):const Color.fromARGB(255, 0, 0, 0),
+      color: Get.isDarkMode?Color.fromARGB(255, 255, 255, 255):const Color.fromARGB(255, 0, 0, 0),
       fontWeight: FontWeight.w400,
       fontSize: 14,
     )

@@ -41,7 +41,7 @@ class MyInputField extends StatelessWidget {
                 child: TextFormField(
                   readOnly: widget==null?false:true,
                   autofocus: false,
-                  cursorColor: Get.isDarkMode?Colors.grey[100]:Colors.grey[700],
+                  cursorColor: Get.isDarkMode?Colors.grey[100]:const Color.fromARGB(255, 0, 0, 0),
                   controller: controller,
                   style: subTitleStyle,
                   decoration: InputDecoration(
