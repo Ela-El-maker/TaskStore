@@ -28,7 +28,7 @@ class DBHelper {
             "remind INTEGER,repeat STRING,"
             "color INTEGER,"
             "isCompleted INTEGER" // Removed trailing comma
-            ")",
+            ")", 
           );
         },
       );

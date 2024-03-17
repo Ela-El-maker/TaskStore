@@ -58,25 +58,61 @@ class _HomePageState extends State<HomePage> {
           //     _taskController.delete(_taskController.taskList[index]);
           //     _taskController.getTasks();
           //   },
-          return AnimationConfiguration.staggeredList(
-            position: index,
-            child: SlideAnimation(
-              child: FadeInAnimation(
-                child: Row(
-                  children: [
-                    GestureDetector(
+          Task task = _taskController.taskList[index];
+          // print(task.toJson());
+          if (task.repeat == 'Daily') {
+            // DateTime date = DateFormat.jm().parse(task.startTime.toString());
+            // var myTime = DateFormat("HH:mm").format(date);
+            // print(myTime);
+            // notifyHelper
+            //     .scheduledNotification(
+            //     int.parse(myTime.toString().split(":")[0]),
+            //     int.parse(myTime.toString().split(":")[1]),
+            //     task
+            //   );
+            return AnimationConfiguration.staggeredList(
+              position: index,
+              child: SlideAnimation(
+                child: FadeInAnimation(
+                  child: Row(
+                    children: [
+                      GestureDetector(
                         onTap: () {
                           // _taskController.delete(_taskController.taskList[index]);
                           // _taskController.getTasks();
-                          _showBottomSheet(
-                              context, _taskController.taskList[index]);
+                          _showBottomSheet(context, task);
                         },
-                        child: TaskTile(_taskController.taskList[index]))
-                  ],
+                        child: TaskTile(task),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          );
+            );
+          }
+          if (task.date == DateFormat.yMd().format(_selectedDate)) {
+            return AnimationConfiguration.staggeredList(
+              position: index,
+              child: SlideAnimation(
+                child: FadeInAnimation(
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          // _taskController.delete(_taskController.taskList[index]);
+                          // _taskController.getTasks();
+                          _showBottomSheet(context, task);
+                        },
+                        child: TaskTile(task),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            );
+          } else {
+            return Container();
+          }
           // );
         },
       ),
@@ -225,15 +261,11 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey),
             ),
             onDateChange: (date) {
-              _selectedDate = date;
+              setState(() {
+                _selectedDate = date;
+              });
             },
           ),
-          // SizedBox(height: 5),
-          // Text(
-          //   'Selected Date: ${DateFormat.yMMMd().format(_selectedDate)}',
-          //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          // ),
-          // _showTasks(),
         ],
       ),
     );
@@ -280,6 +312,12 @@ class _HomePageState extends State<HomePage> {
       leading: GestureDetector(
         onTap: () {
           ThemeServices().switchTheme();
+          // NotifyHelper().displayNotification(
+          //   title: "Theme changed",
+          //   body:
+          //       Get.isDarkMode ? "Light Mode Activated" : "Dark Mode Activated",
+          // );
+          notifyHelper.scheduledNotification();
         },
         child: Icon(
           Get.isDarkMode ? Icons.wb_sunny_outlined : Icons.nightlight_round,
